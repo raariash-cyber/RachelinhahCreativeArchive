@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ============================================================
+  ✏️  EDIT #1 — Change the browser tab title
+============================================================ -->
+<title>Raquel Arias — Digital Marketing, Branding & Content</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Cormorant+Garamond:ital,wght@0,300;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  /* ============================================================
+    ✏️  EDIT #2 — Colors (optional, current = ocean blue palette)
+  ============================================================ */
+  --bg:#4E6E7E;       /* main background */
+  --bg2:#3E5C6C;      /* darker sections */
+  --bg3:#334E5C;      /* darkest sections */
+  --light:#C8DDE0;    /* light section (process) */
+  --white:#FFFFFF;
+  --terra:#A2DBD6;    /* accent color */
+  --terra2:#C8EDEA;   /* accent light */
+  --muted:rgba(255,255,255,0.45);
+  --border:rgba(255,255,255,0.14);
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--white);overflow-x:hidden;font-size:16px;line-height:1.7}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:22px 48px}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:300;font-style:italic;color:var(--white);text-decoration:none;letter-spacing:0.04em}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.55);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--white)}
+.hero{position:relative;height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;background:var(--bg2)}
+.hero-video-wrap{position:absolute;inset:0;z-index:0;overflow:hidden}
+.hero-video-wrap video{width:100%;height:100%;object-fit:cover;filter:brightness(0.5) saturate(0.65) hue-rotate(190deg)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(62,92,108,0.45) 0%,rgba(51,78,92,0.55) 100%);z-index:1}
+.letters-field{position:absolute;inset:0;z-index:2;pointer-events:none;overflow:hidden}
+.ltr{position:absolute;font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,8vw,110px);color:rgba(255,255,255,0.07);user-select:none;animation:floatL 18s ease-in-out infinite}
+.ltr:nth-child(1){top:8%;left:4%}.ltr:nth-child(2){top:12%;left:13%;animation-delay:.4s}.ltr:nth-child(3){top:7%;left:22%;animation-delay:.8s}.ltr:nth-child(4){top:14%;left:31%;animation-delay:1.2s}.ltr:nth-child(5){top:9%;left:40%;animation-delay:1.6s}.ltr:nth-child(6){top:13%;right:38%;animation-delay:2s}.ltr:nth-child(7){top:8%;right:26%;animation-delay:2.4s}.ltr:nth-child(8){top:13%;right:16%;animation-delay:2.8s}.ltr:nth-child(9){top:8%;right:7%;animation-delay:3.2s}.ltr:nth-child(10){top:18%;right:2%;animation-delay:3.6s}
+@keyframes floatL{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+.hero-center{position:relative;z-index:3;text-align:center;padding:0 24px}
+.hero-eyebrow{font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra2);margin-bottom:28px;display:block}
+.hero-im{font-family:'DM Sans',sans-serif;font-size:14px;font-weight:300;color:rgba(255,255,255,0.45);letter-spacing:0.06em;margin-bottom:-8px}
+.hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(80px,14vw,200px);line-height:0.9;color:var(--white);letter-spacing:0.02em;display:block}
+.hero-title .accent{color:var(--terra)}
+.hero-sub{font-family:'Cormorant Garamond',serif;font-size:clamp(18px,2.5vw,26px);font-weight:300;font-style:italic;color:rgba(255,255,255,0.7);margin:20px 0 36px;letter-spacing:0.02em}
+.hero-cta{display:flex;gap:20px;justify-content:center;align-items:center;flex-wrap:wrap}
+.btn-dark{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.15);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.3);color:var(--white);font-size:12px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;padding:14px 32px;text-decoration:none;transition:background .2s,transform .15s}
+.btn-dark:hover{background:rgba(255,255,255,0.25);transform:translateY(-2px)}
+.btn-ghost{font-size:12px;font-weight:400;color:rgba(255,255,255,0.5);text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;border-bottom:0.5px solid rgba(255,255,255,0.25);padding-bottom:2px;transition:color .2s}
+.btn-ghost:hover{color:var(--white)}
+.hero-scroll{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);z-index:3;display:flex;flex-direction:column;align-items:center;gap:8px}
+.scroll-line{width:0.5px;height:48px;background:linear-gradient(to bottom,rgba(255,255,255,0.5),transparent);animation:scrollpulse 2s ease-in-out infinite}
+.scroll-label{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.35)}
+@keyframes scrollpulse{0%,100%{opacity:0.4}50%{opacity:1}}
+.ticker{background:var(--bg3);overflow:hidden;padding:13px 0;white-space:nowrap;border-top:0.5px solid rgba(255,255,255,0.1);border-bottom:0.5px solid rgba(255,255,255,0.1)}
+.ticker-inner{display:inline-flex;animation:tick 24s linear infinite}
+.ticker-item{font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.7);padding:0 28px}
+.ticker-dot{color:var(--terra);font-size:14px;vertical-align:middle}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+section{padding:100px 64px}
+.s-label{font-size:11px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:var(--terra);margin-bottom:12px;display:block}
+.s-head{font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,6vw,80px);line-height:0.95;color:var(--white);margin-bottom:8px;letter-spacing:0.02em}
+.s-head em{color:var(--terra);font-style:normal}
+.about{background:var(--bg2)}
+.about-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:80px;max-width:1200px;margin:0 auto;align-items:start}
+.about-body{font-size:16px;color:rgba(255,255,255,0.65);line-height:1.85;margin-bottom:20px}
+.about-body strong{color:var(--white);font-weight:500}
+.skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:32px}
+.skill{font-size:11px;letter-spacing:0.07em;padding:7px 16px;border:0.5px solid var(--border);color:rgba(255,255,255,0.5);transition:border-color .2s,color .2s;cursor:default}
+.skill:hover{border-color:var(--terra);color:var(--terra2)}
+.industries{margin-top:40px;padding-top:32px;border-top:0.5px solid var(--border)}
+.ind-label{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:14px}
+.ind-pills{display:flex;flex-wrap:wrap;gap:8px}
+.ind-pill{font-size:12px;font-weight:500;padding:6px 16px;background:rgba(162,219,214,0.12);color:var(--terra2);letter-spacing:0.02em;border:0.5px solid rgba(162,219,214,0.25)}
+.projects{background:var(--bg);padding-bottom:120px}
+.projects-intro{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:64px;gap:40px;flex-wrap:wrap}
+.project-list{display:flex;flex-direction:column;gap:1px}
+.project-item{display:grid;grid-template-columns:72px 1fr auto;align-items:center;gap:32px;padding:28px 40px;background:var(--bg2);text-decoration:none;color:inherit;border-left:2px solid transparent;transition:background .25s,border-color .25s}
+.project-item:hover{background:var(--bg3);border-color:var(--terra)}
+.project-item:hover .pi-arrow{transform:translate(4px,-4px);color:var(--terra2)}
+.project-item:hover .pi-num{color:rgba(255,255,255,0.2)}
+.pi-num{font-family:'Bebas Neue',sans-serif;font-size:36px;color:rgba(255,255,255,0.1);line-height:1;transition:color .25s}
+.pi-cat{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:6px}
+.pi-title{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,2.5vw,28px);font-weight:300;color:var(--white);line-height:1.2;margin-bottom:8px}
+.pi-desc{font-size:13px;color:rgba(255,255,255,0.45);line-height:1.6}
+.pi-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.pi-tag{font-size:10px;letter-spacing:0.05em;padding:3px 10px;border:0.5px solid var(--border);color:rgba(255,255,255,0.35)}
+.pi-arrow{font-size:22px;color:rgba(255,255,255,0.2);transition:transform .25s,color .25s;flex-shrink:0}
+.pi-featured{background:rgba(162,219,214,0.1);border-left:2px solid var(--terra)}
+.pi-featured:hover{background:rgba(162,219,214,0.18)}
+.pi-featured .pi-num{color:rgba(162,219,214,0.2)}
+.process{background:var(--light);padding:100px 64px}
+.process .s-label{color:var(--bg3)}
+.process .s-head{color:var(--bg3)}
+.process .s-head em{color:var(--bg)}
+.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:60px;border-top:0.5px solid rgba(51,78,92,0.18)}
+.p-step{padding:36px 32px 36px 0;border-right:0.5px solid rgba(51,78,92,0.12)}
+.p-step:last-child{border-right:none;padding-right:0;padding-left:32px}
+.p-step:not(:first-child):not(:last-child){padding-left:32px}
+.p-num{font-family:'Bebas Neue',sans-serif;font-size:64px;color:rgba(51,78,92,0.1);line-height:1;margin-bottom:12px}
+.p-title{font-size:14px;font-weight:500;color:var(--bg3);margin-bottom:10px;letter-spacing:0.03em}
+.p-desc{font-size:13px;color:rgba(51,78,92,0.6);line-height:1.7}
+.contact{background:var(--bg3);text-align:center;padding:120px 48px}
+.contact-big{font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,10vw,130px);line-height:0.9;color:var(--white);letter-spacing:0.02em;margin:24px 0}
+.contact-big span{color:var(--terra)}
+.contact-sub{font-size:15px;color:rgba(255,255,255,0.5);max-width:480px;margin:0 auto 48px;line-height:1.75}
+.contact-email{display:block;font-family:'Cormorant Garamond',serif;font-size:clamp(22px,3vw,36px);font-weight:300;font-style:italic;color:var(--terra2);text-decoration:none;margin-bottom:40px;transition:opacity .2s}
+.contact-email:hover{opacity:.7}
+.contact-links{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.c-link{font-size:12px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.45);text-decoration:none;border-bottom:0.5px solid var(--border);padding-bottom:2px;transition:color .2s,border-color .2s}
+.c-link:hover{color:var(--white);border-color:rgba(255,255,255,0.5)}
+footer{background:var(--bg3);padding:24px 48px;display:flex;justify-content:space-between;align-items:center;border-top:0.5px solid rgba(255,255,255,0.08)}
+.f-name{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:300;font-style:italic;color:rgba(255,255,255,0.3)}
+.f-right{font-size:11px;color:rgba(255,255,255,0.2);letter-spacing:0.06em}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+@media(max-width:900px){
+  nav{padding:16px 24px}.nav-links{display:none}
+  section{padding:72px 24px}.about-grid{grid-template-columns:1fr;gap:40px}
+  .project-item{grid-template-columns:48px 1fr 24px;gap:16px;padding:20px}
+  .process-steps{grid-template-columns:1fr 1fr}
+  .p-step{padding:24px;border-right:none;border-bottom:0.5px solid rgba(51,78,92,0.12)}
+  footer{flex-direction:column;gap:8px;text-align:center}.process{padding:72px 24px}
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+  NAV — ✏️ EDIT #3: Your name + nav links
+============================================================ -->
+<nav>
+  <a href="#" class="nav-logo">Raquel Arias</a>  <!-- ✏️ Your name -->
+  <ul class="nav-links">
+    <li><a href="#projects">Work</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#contact">Let's talk</a></li>
+  </ul>
+</nav>
+
+<!-- ============================================================
+  HERO
+============================================================ -->
+<section class="hero" style="padding:0">
+
+  <!-- ✏️ EDIT #4 — YOUR VIDEO
+       Replace the src below with your video URL.
+       Your Cloudinary direct link is:
+       https://res.cloudinary.com/dec0i2wnm/video/upload/Webflow_video_cyt6sb.mp4
+  -->
+  <div class="hero-video-wrap">
+    <video autoplay muted loop playsinline>
+      <source src="https://res.cloudinary.com/dec0i2wnm/video/upload/Webflow_video_cyt6sb.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="hero-overlay"></div>
+  <div class="letters-field" aria-hidden="true">
+    <span class="ltr">H</span><span class="ltr">E</span><span class="ltr">L</span>
+    <span class="ltr">L</span><span class="ltr">O</span><span class="ltr">&nbsp;</span>
+    <span class="ltr">T</span><span class="ltr">H</span><span class="ltr">E</span><span class="ltr">R</span>
+  </div>
+
+  <div class="hero-center">
+    <!-- ✏️ EDIT #5 — Hero text -->
+    <span class="hero-eyebrow">Digital Marketing · Brand Strategy · Content</span>
+    <span class="hero-im">I'm Raquel Arias —</span>
+    <span class="hero-title">I MAKE<br><span class="accent">BRANDS</span><br>CONVERT.</span>
+    <p class="hero-sub">Strategy that feels human. Content that actually sells.</p>
+    <div class="hero-cta">
+      <!-- ✏️ EDIT #6 — Button links -->
+      <a href="#projects" class="btn-dark">View my work →</a>
+      <a href="https://drive.google.com/file/d/1Ot8Z1ewLzLZFmZ6u6pLiKo_ZAaoxQl1-/view" target="_blank" class="btn-ghost">Download résumé</a>
+    </div>
+  </div>
+  <div class="hero-scroll" aria-hidden="true">
+    <span class="scroll-label">scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ============================================================
+  TICKER — ✏️ EDIT #7: Your skills/services (repeat the list twice)
+============================================================ -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-inner">
+    <span class="ticker-item">Meta Ads</span><span class="ticker-dot">·</span>
+    <span class="ticker-item">Content Strategy</span><span class="ticker-dot">·</span>
+    <span class="ticker-item">Brand Marketing</span><span class="ticker-dot">·</span>
+    <span class="ticker-item">Email Campaigns</span><span class="ticker-dot">·</span>
+    <span class="ticker-item">UGC & Influencer</span><span class="ticker-dot">·</span>
+    <span class="ticker-item">Paid Social</span><span class="ticker-dot">·</span>
+    <span class="ticker-item">E-Commerce Growth</span><span class="ticker-dot">·</span>
+    <span class="ticker-item">Social Media</span><span class="ticker-dot">·</span>
+    <!-- repeat below 👇 (keeps the ticker seamless) -->
+    <span class="ticker-item">Meta Ads</span><span class="ticker-dot">·</span>
+    <span class="ticker-item">Content Strategy</span><span class="ticker-dot">·</span>
+    <span class="ticker-item">Brand Marketing</span><span class="ticker-dot">·</span>
+    <span class="ticker-item">Email Campaigns</span><span class="ticker-dot">·</span>
+    <span class="ticker-item">UGC & Influencer</span><span class="ticker-dot">·</span>
+    <span class="ticker-item">Paid Social</span><span class="ticker-dot">·</span>
+    <span class="ticker-item">E-Commerce Growth</span><span class="ticker-dot">·</span>
+    <span class="ticker-item">Social Media</span><span class="ticker-dot">·</span>
+  </div>
+</div>
+
+<!-- ============================================================
+  ABOUT — ✏️ EDIT #8: Your bio, skills & industries
+============================================================ -->
+<section class="about" id="about">
+  <div class="about-grid">
+    <div class="reveal">
+      <span class="s-label">Why brands choose me</span>
+      <h2 class="s-head">YOU DON'T NEED MORE CONTENT.<br><em>YOU NEED A STRATEGY.</em></h2>
+      <div class="industries" style="margin-top:36px">
+        <p class="ind-label">Industries</p>
+        <div class="ind-pills">
+          <!-- ✏️ Add/remove industry pills here -->
+          <span class="ind-pill">Hospitality</span>
+          <span class="ind-pill">Beauty & Skincare</span>
+          <span class="ind-pill">Retail</span>
+          <span class="ind-pill">Real Estate</span>
+          <span class="ind-pill">Children & Education</span>
+          <span class="ind-pill">Agency</span>
+        </div>
+      </div>
+    </div>
+    <div class="reveal">
+      <!-- ✏️ Your bio paragraphs -->
+      <p class="about-body">Most brands are posting. <strong>Few are converting.</strong> The difference isn't more content — it's a clear strategy behind every post, ad, and email.</p>
+      <p class="about-body">I build the strategy, run the campaigns, and create the content — so your brand <strong>stops the scroll and starts making money.</strong></p>
+      <div class="skills">
+        <!-- ✏️ Your skill tags -->
+        <span class="skill">Meta Ads · Paid Social</span>
+        <span class="skill">Content Strategy</span>
+        <span class="skill">Brand Marketing</span>
+        <span class="skill">Email Marketing</span>
+        <span class="skill">UGC & Influencer</span>
+        <span class="skill">Social Media Management</span>
+        <span class="skill">Campaign Analytics</span>
+        <span class="skill">E-commerce Growth</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+  PROJECTS — ✏️ EDIT #9: Your project links, titles & descriptions
+============================================================ -->
+<section class="projects" id="projects">
+  <div class="projects-intro">
+    <div class="reveal">
+      <span class="s-label">Proof it works</span>
+      <h2 class="s-head">CAMPAIGNS THAT<br><em>ACTUALLY CONVERTED</em></h2>
+    </div>
+    <p class="reveal" style="font-size:14px;color:rgba(255,255,255,0.45);max-width:320px;line-height:1.75">From strategy to execution — campaigns built with purpose across paid, organic, email, and influencer.</p>
+  </div>
+
+  <div class="project-list">
+
+    <!-- ✏️ PROJECT 1 — change href to your case study link -->
+    <a href="https://raquelintro.my.canva.site/ads-campaigns-work-samples" target="_blank" class="project-item pi-featured reveal">
+      <span class="pi-num">01</span>
+      <div class="pi-body">
+        <p class="pi-cat">Paid Ads Campaigns · Multiple Industries</p>
+        <h3 class="pi-title">Paid Ads — Successful Cases Across Industries</h3>
+        <p class="pi-desc">Full-funnel paid campaigns across Google, TikTok, LinkedIn, and Facebook Ads — different industries, consistent results. From awareness to conversion, built to perform.</p>
+        <div class="pi-tags"><span class="pi-tag">Google Ads</span><span class="pi-tag">TikTok Ads</span><span class="pi-tag">LinkedIn Ads</span><span class="pi-tag">Facebook Ads</span><span class="pi-tag">Multi-Industry</span></div>
+      </div>
+      <span class="pi-arrow">↗</span>
+    </a>
+
+    <!-- ✏️ PROJECT 2 -->
+    <a href="https://raquelintro.my.canva.site/beach-wedding-website-ph-in-white-blue-black-loose-doodles-style" target="_blank" class="project-item reveal">
+      <span class="pi-num">02</span>
+      <div class="pi-body">
+        <p class="pi-cat">Hospitality</p>
+        <h3 class="pi-title">Digital Strategy for Conversion Growth</h3>
+        <p class="pi-desc">Identified funnel gaps and deployed paid and organic tactics that drove measurable revenue growth for a hospitality brand.</p>
+        <div class="pi-tags"><span class="pi-tag">Conversion Strategy</span><span class="pi-tag">Funnel Optimization</span><span class="pi-tag">Hospitality</span></div>
+      </div>
+      <span class="pi-arrow">↗</span>
+    </a>
+
+    <!-- ✏️ PROJECT 3 -->
+    <a href="https://raquelintro.my.canva.site/brand-marketing-digital-strategy" target="_blank" class="project-item reveal">
+      <span class="pi-num">03</span>
+      <div class="pi-body">
+        <p class="pi-cat">Hospitality</p>
+        <h3 class="pi-title">Brand Marketing & Digital Strategy</h3>
+        <p class="pi-desc">End-to-end brand voice, content calendar, social strategy, and cross-channel campaign management to grow awareness and drive direct bookings.</p>
+        <div class="pi-tags"><span class="pi-tag">Brand Marketing</span><span class="pi-tag">Social Strategy</span><span class="pi-tag">Content</span></div>
+      </div>
+      <span class="pi-arrow">↗</span>
+    </a>
+
+    <!-- ✏️ PROJECT 4 -->
+    <a href="https://raquelintro.my.canva.site/social-media-cases" target="_blank" class="project-item reveal">
+      <span class="pi-num">04</span>
+      <div class="pi-body">
+        <p class="pi-cat">Content · Social Media · Influencer</p>
+        <h3 class="pi-title">Social Media, UGC & Influencer Marketing</h3>
+        <p class="pi-desc">Scroll-stopping content, UGC campaigns, and influencer partnerships across industries — every format and CTA placed with strategic purpose.</p>
+        <div class="pi-tags"><span class="pi-tag">UGC</span><span class="pi-tag">Social Media</span><span class="pi-tag">Content Creation</span><span class="pi-tag">Influencer Marketing</span></div>
+      </div>
+      <span class="pi-arrow">↗</span>
+    </a>
+
+    <!-- ✏️ PROJECT 5 -->
+    <a href="https://raquelintro.my.canva.site/raquel-arias-email-strategy-campaign-work-samples" target="_blank" class="project-item reveal">
+      <span class="pi-num">05</span>
+      <div class="pi-body">
+        <p class="pi-cat">Email Marketing</p>
+        <h3 class="pi-title">Email Marketing — Work Samples</h3>
+        <p class="pi-desc">Welcome flows to promotional sends. Strategic segmentation, compelling copy, and design that converts — with a focus on deliverability and performance.</p>
+        <div class="pi-tags"><span class="pi-tag">Email</span><span class="pi-tag">Copywriting</span><span class="pi-tag">Segmentation</span><span class="pi-tag">Automations</span></div>
+      </div>
+      <span class="pi-arrow">↗</span>
+    </a>
+
+  </div>
+</section>
+
+<!-- ============================================================
+  PROCESS — ✏️ EDIT #10: Your 4 process steps
+============================================================ -->
+<section class="process" id="process">
+  <span class="s-label reveal">What working together looks like</span>
+  <h2 class="s-head reveal">YOUR BRAND.<br>A CLEAR PLAN.<br><em>REAL RESULTS.</em></h2>
+  <div class="process-steps">
+    <div class="p-step reveal">
+      <div class="p-num">01</div>
+      <p class="p-title">Discover & define</p>
+      <p class="p-desc">I start by understanding the brand, the audience, and the goal. No assumptions — deep listening, research, and a clear brief.</p>
+    </div>
+    <div class="p-step reveal">
+      <div class="p-num">02</div>
+      <p class="p-title">Strategy & architecture</p>
+      <p class="p-desc">Channel selection, funnel design, messaging hierarchy. I build the map before anyone touches a creative asset.</p>
+    </div>
+    <div class="p-step reveal">
+      <div class="p-num">03</div>
+      <p class="p-title">Create & launch</p>
+      <p class="p-desc">Content, copy, campaign setup. I direct creative with intention — every format, angle, and CTA earns its place.</p>
+    </div>
+    <div class="p-step reveal">
+      <div class="p-num">04</div>
+      <p class="p-title">Optimize & report</p>
+      <p class="p-desc">In-flight adjustments, performance analysis, and clear reporting that tells the story behind the numbers.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+  CONTACT — ✏️ EDIT #11: Your email & social links
+============================================================ -->
+<section class="contact" id="contact">
+  <span class="s-label reveal" style="justify-content:center;display:flex">Ready to grow?</span>
+  <div class="contact-big reveal">LET'S MAKE YOUR<br>BRAND <span>IMPOSSIBLE</span><br>TO IGNORE.</div>
+  <p class="contact-sub reveal">If you want content that converts, campaigns that perform, and a strategy that actually makes sense — let's talk.</p>
+
+  <!-- ✏️ Your email -->
+  <a href="mailto:raariash@gmail.com" class="contact-email reveal">raariash@gmail.com</a>
+
+  <div class="contact-links reveal">
+    <!-- ✏️ Your social/resume links -->
+    <a href="https://www.linkedin.com/in/raariash/" target="_blank" class="c-link">LinkedIn ↗</a>
+    <a href="https://drive.google.com/file/d/1Ot8Z1ewLzLZFmZ6u6pLiKo_ZAaoxQl1-/view" target="_blank" class="c-link">Download résumé ↗</a>
+    <a href="https://youtu.be/ypT-3fHdi_k?si=EuKQl3ZYwjz9t1jz" target="_blank" class="c-link">Get to know me ↗</a>
+  </div>
+</section>
+
+<!-- ============================================================
+  FOOTER — ✏️ EDIT #12: Your name & tagline
+============================================================ -->
+<footer>
+  <span class="f-name">Raquel Arias</span>
+  <span class="f-right">Digital Marketing · Brand Strategy · Content © 2025</span>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const t = document.querySelector(a.getAttribute('href'));
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+</script>
+</body>
+</html>
